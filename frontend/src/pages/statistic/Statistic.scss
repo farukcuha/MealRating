@@ -1,0 +1,81 @@
+.total_average {
+    display: flex;
+    padding: 16px;
+    height: fit-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 16px;
+
+    .total_average_title {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .total_average_score {
+        margin-right: 0px;
+        margin-left: auto;
+        font-size: 20px;
+        font-weight: 600;
+        color: #d73939;
+    }
+}
+
+.averages {
+    margin-top: 16px;
+}
+
+.averages_by_times {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+
+    .average_by_time {
+        padding: 16px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        width: 100%;
+        border-radius: 16px;
+        align-items: center;
+
+        .average_by_time_title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .average_by_time_score {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: #d73939;
+        }
+    }
+}
+
+.averages_by_meals {
+    margin-top: 16px;
+
+    .average_by_meal {
+        padding: 16px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        width: 100%;
+        display: flex;
+        border-radius: 8px;
+        align-items: center;
+        margin-top: 8px;
+
+        .average_by_meal_score {
+            margin-right: 0;
+            margin-left: auto;
+            font-weight: 500;
+            color: #d73939;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .averages_by_times {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}

@@ -1,0 +1,38 @@
+[
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e100"
+        },
+        "name": "Haşlanmış Yumurta"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e101"
+        },
+        "name": "Kıyma"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e102"
+        },
+        "name": "Kuru Fasulye"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e103"
+        },
+        "name": "Pirinç Pilavı"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e104"
+        },
+        "name": "Nohut"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e105"
+        },
+        "name": "Ispanak"
+    }
+]

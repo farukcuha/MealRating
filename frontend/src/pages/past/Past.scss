@@ -1,0 +1,27 @@
+$primary: #251D3A;
+$secondary: #E04D01;
+
+.past_review {
+    padding: 8px 16px;
+    display: flex;
+    text-decoration: none;
+    border-radius: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    .meal {
+        font-weight: 600;
+    }
+
+    .review_count {
+        font-size: 12px;
+        color: rgb(169, 169, 169);
+    }
+
+    .rate {
+        margin-left: auto;
+        font-weight: 600;
+        color: $secondary;
+    }
+}

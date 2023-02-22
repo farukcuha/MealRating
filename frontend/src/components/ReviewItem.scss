@@ -1,0 +1,49 @@
+@import '../Colors.scss';
+
+.review_item_container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+
+    .review_image {
+        object-fit: cover;
+        width: 108px;
+        height: 108px;
+        border-radius: 8px 0 0 8px;
+        cursor: pointer;
+    }
+
+    .review_text {
+        padding: 16px;
+
+        .review_author {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .review_body {
+            font-weight: 400;
+            
+        }
+
+        .review_time {
+            font-weight: 300;
+            color: gray;
+        }
+    }
+    .review_score{
+        margin-right: 0;
+        margin-left: auto;
+        color: $secondary;
+        width: fit-content;
+        height: fit-content;
+        font-size: 18px;
+        margin-right: 16px;
+        font-weight: 600;
+    }
+}
