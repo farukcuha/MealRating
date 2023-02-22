@@ -35,7 +35,7 @@ const getLocaleDateTitle = (time) => {
 }
 
 export const getTimeTitle = (time) => {
-    let date = new Date(time)
+    let date = new Date(new Date(time).getTime() + 3 * 60 * 60 * 1000)
     let minutes = date.getMinutes()
     return`${date.getHours()}:${minutes < 10 ? `0${minutes}` : `${minutes}`}`
 }
