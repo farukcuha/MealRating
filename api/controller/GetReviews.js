@@ -30,7 +30,7 @@ const getReviews = async (req, res) => executeProcessSafe(async () => {
                     author: reviewByFood.author,
                     score: reviewByFood.score,
                     body: reviewByFood.body,
-                    time: getTimeTitle(reviewByFood._id.getTimestamp()),
+                    time: getTimeTitle(reviewByFood._id.getTimestamp() + (3 * 60 * 60 * 1000)),
                     image: reviewByFood.image
                 }
             })
