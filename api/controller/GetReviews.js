@@ -19,7 +19,7 @@ const getReviews = async (req, res) => executeProcessSafe(async () => {
         let foodId = foodIds[i]
         var reviewsByFood = (await Review.find({ food_id: foodId, time: queryParamTime, meal: queryParamMeal }))
             .sort((a, b) => (a._id.getTimestamp() > b._id.getTimestamp() ? -1 : 1))
-        let averageOfScores = getScoreWithEmoji(getAverageOfScores(reviewsByFood))
+        let averageOfScores = getAverageOfScores(reviewsByFood).toFixed(1)
         let food = await Food.findById(foodId)
         sum += averageOfScores * reviewsByFood.length
         total += reviewsByFood.length
