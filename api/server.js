@@ -11,13 +11,15 @@ import getTotalAverageScore from './controller/GetTotalAverageScore.js'
 import insertReview from './controller/InsertReview.js';
 
 let server = express()
-const corsOptions ={
-    origin:'http://localhost:3000', 
-    credentials:true,        
-    optionSuccessStatus:200
-}
-server.use(cors(corsOptions))
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+const corsOpts = {
+    origin: '*',
+    credentials: true,
+    methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
+    allowedHeaders: ['Content-Type'],
+    exposedHeaders: ['Content-Type']
+};
+server.use(cors(corsOpts))
+mongoose.connect(process.env.DATABASE_URL || 'mongodb+srv://farukcuha:Ahmet+2002@cluster0.piprcy7.mongodb.net/kusculu_meal_rating_database?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         console.log('connected to database');
         server.listen(process.env.PORT || 4000)

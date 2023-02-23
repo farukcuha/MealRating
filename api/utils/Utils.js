@@ -8,7 +8,6 @@ export const getAverageOfScores = (reviews) => {
     return (sumOfScores / reviews.length).toFixed(1)
 }
 
-
 export const onlyUnique = (value, index, self) => {
     return self.indexOf(value) === index;
 }
