@@ -34,5 +34,47 @@
             "$oid": "63e68bcdcd0d89e61ce7e105"
         },
         "name": "Ispanak"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e106"
+        },
+        "name": "Mercimek Çorbası"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e107"
+        },
+        "name": "Sosis"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e108"
+        },
+        "name": "Patates Kızartması"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e109"
+        },
+        "name": "Makarna"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e110"
+        },
+        "name": "Patlıcan-Kabak Yemeği"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e111"
+        },
+        "name": "Mantı"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e112"
+        },
+        "name": "Bulgur Pilavı"
     }
 ]
