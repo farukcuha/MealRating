@@ -131,7 +131,7 @@ const AddReviewDialog = () => {
         <div style={{ marginTop: "16px" }}>
             <ThemeProvider theme={theme}>
                 <Button onClick={handleClickOpen} fullWidth
-                    variant="contained">Yorum Ekle</Button>
+                    variant="contained">Değerlendirme Ekle</Button>
                 <Dialog
                     open={open}
                     onClose={handleClose}>
@@ -139,12 +139,7 @@ const AddReviewDialog = () => {
                         {"Yorum Ekle"}
                     </DialogTitle>
                     <DialogContent>
-                        <Grid
-                            container
-                            spacing={0}
-                            direction="column"
-                            alignItems="center"
-                            justifyContent="center">
+                        <Box>
                             <div style={{ "color": "red" }}>{(isErrorPassword && !isEmptyPassword) ? 'Hatalı Şifre' : ''}</div>
                             <TextField
                                 id="outlined-multiline-static"
@@ -242,11 +237,11 @@ const AddReviewDialog = () => {
                                 sx={{ mt: 2 }} />
 
                             {
-                                isLoading ? <CircularProgress style={{ "margin-top": "16px" }} /> : <Button fullWidth onClick={submitComment}
+                                isLoading ? <LinearProgress color='secondary' style={{ "margin-top": "16px" }} /> : <Button fullWidth onClick={submitComment}
                                     variant="contained" sx={{ mt: 2 }}>Gönder</Button>
                             }
 
-                        </Grid>
+                        </Box>
                     </DialogContent>
                 </Dialog>
             </ThemeProvider>

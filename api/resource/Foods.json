@@ -76,5 +76,155 @@
             "$oid": "63e68bcdcd0d89e61ce7e112"
         },
         "name": "Bulgur Pilavı"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e113"
+        },
+        "name": "Sulu Patates"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e114"
+        },
+        "name": "Portakallı Ördek"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e115"
+        },
+        "name": "Et-Kemik Haşlama"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e116"
+        },
+        "name": "Et-Kemik Fırınlama"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e117"
+        },
+        "name": "Dalyan Köfte"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e118"
+        },
+        "name": "Kelle Paça"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e119"
+        },
+        "name": "Ekmek Arası Kıyma"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e120"
+        },
+        "name": "Ekmek Arası Tavuk Döner"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e121"
+        },
+        "name": "Ekmek Arası Et Döner"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e122"
+        },
+        "name": "Tavuk Döner"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e1123"
+        },
+        "name": "Et Döner"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e124"
+        },
+        "name": "Et-Tavuk Döner"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e125"
+        },
+        "name": "İrmik Helvası"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e126"
+        },
+        "name": "Menemen"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e127"
+        },
+        "name": "Yağda Yumurta"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e128"
+        },
+        "name": "Kek"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e129"
+        },
+        "name": "Dolma"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e130"
+        },
+        "name": "Kara Şimşek"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e131"
+        },
+        "name": "Domates Çorbası"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e132"
+        },
+        "name": "Yumurtalı Pırasa"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e133"
+        },
+        "name": "Pırasa"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e134"
+        },
+        "name": "Sütlaç"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e135"
+        },
+        "name": "Çiğ Köfte"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e136"
+        },
+        "name": "Yoğurt Çorbası"
+    },
+    {
+        "_id": {
+            "$oid": "63e68bcdcd0d89e61ce7e137"
+        },
+        "name": "Mantar Çorbası"
     }
 ]
