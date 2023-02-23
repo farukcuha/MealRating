@@ -3,6 +3,7 @@ import { getAverageOfScores } from "../utils/Utils.js"
 import { executeProcessSafe } from "../utils/Utils.js"
 import Food from '../model/Food.js'
 import { getTimeTitle } from "../utils/DateUtils.js"
+import { getScoreWithEmoji } from "../utils/Utils.js"
 
 const getReviews = async (req, res) => executeProcessSafe(async () => {
     let queryParamTime = parseInt(req.query.time)
@@ -36,7 +37,7 @@ const getReviews = async (req, res) => executeProcessSafe(async () => {
             })
         })
     }
-    let average_score = (sum / total).toFixed(1)
+    let average_score = getScoreWithEmoji(sum / total)
     res.json({ average_score, result })
 })
 

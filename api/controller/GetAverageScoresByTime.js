@@ -2,6 +2,7 @@ import { getThisWeek, getPreviousWeek, getThisMonth, getPreviousMonth } from '..
 import Review from '../model/Review.js'
 import { executeProcessSafe } from "../utils/Utils.js"
 import { getAverageOfScores } from '../utils/Utils.js'
+import { getScoreWithEmoji } from "../utils/Utils.js"
 
 const getAverageScoresByTime = async (req, res) => executeProcessSafe(async () => {
     let thisWeek = getThisWeek().getTime()
@@ -10,16 +11,16 @@ const getAverageScoresByTime = async (req, res) => executeProcessSafe(async () =
     let previousMonth = getPreviousMonth().getTime()
 
     let thisWeeksReviews = await Review.find({ time: { $gte: thisWeek } })
-    let thisWeeksAverage = getAverageOfScores(thisWeeksReviews)
+    let thisWeeksAverage = getScoreWithEmoji(getAverageOfScores(thisWeeksReviews))
 
     let previousWeeksReviews = await Review.find({ time: { $gte: previousWeek, $lt: thisWeek } })
-    let previousWeeksAverage = getAverageOfScores(previousWeeksReviews)
+    let previousWeeksAverage = getScoreWithEmoji(getAverageOfScores(previousWeeksReviews))
 
     let thisMonthsReviews = await Review.find({ time: { $gte: thisMonth } })
-    let thisMonthsAverage = getAverageOfScores(thisMonthsReviews)
+    let thisMonthsAverage = getScoreWithEmoji(getAverageOfScores(thisMonthsReviews))
 
     let previousMonthsReviews = await Review.find({ time: { $gte: previousMonth, $lt: thisMonth } })
-    let previousMonthsAverage = getAverageOfScores(previousMonthsReviews)
+    let previousMonthsAverage = getScoreWithEmoji(getAverageOfScores(previousMonthsReviews))
 
     res.json([
         {

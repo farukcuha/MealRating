@@ -1,5 +1,6 @@
 import Review from '../model/Review.js'
 import { executeProcessSafe } from "../utils/Utils.js"
+import { getScoreWithEmoji } from "../utils/Utils.js"
 
 const getAverageScoresByFoods = async (req, res) => executeProcessSafe(async () => {
     let averagesByFoodId = await Review.aggregate([
@@ -27,7 +28,7 @@ const getAverageScoresByFoods = async (req, res) => executeProcessSafe(async () 
         return {
             _id: food._id,
             food: food.food,
-            score: food.score.toFixed(1)
+            score: getScoreWithEmoji(food.score)
         }
     }))
 })

@@ -5,7 +5,7 @@ export const getAverageOfScores = (reviews) => {
     reviews.forEach(review => {
         sumOfScores += parseInt(review.score)
     })
-    return (sumOfScores / reviews.length).toFixed(1)
+    return (sumOfScores / reviews.length)
 }
 
 export const onlyUnique = (value, index, self) => {
@@ -20,3 +20,43 @@ export const executeProcessSafe = (process) => {
     }
 }
 
+export const getScoreWithEmoji = (score) => {
+    var emoji = ''
+    let s = parseInt(score.toFixed())
+    switch (s) {
+        case 1:
+            emoji = '💀'
+            break
+        case 2:
+            emoji = '😡'
+            break
+        case 3:
+            emoji = '😱'
+            break
+        case 4:
+            emoji = '😤'
+            break
+        case 5:
+            emoji = '🙁'
+            break
+        case 6:
+            emoji = '😕'
+            break
+        case 7:
+            emoji = '🙂'
+            break
+        case 8:
+            emoji = '😀'
+            break
+        case 9:
+            emoji = '🤩'
+            break
+        case 10:
+            emoji = '🥳'
+            break
+        default:
+            emoji = ''
+            break
+    }
+    return `${emoji} ${score.toFixed(1)} ${emoji}`
+}

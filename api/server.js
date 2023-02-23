@@ -19,7 +19,7 @@ const corsOpts = {
     exposedHeaders: ['Content-Type']
 };
 server.use(cors(corsOpts))
-mongoose.connect(process.env.DATABASE_URL || 'mongodb+srv://farukcuha:Ahmet+2002@cluster0.piprcy7.mongodb.net/kusculu_meal_rating_database?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         console.log('connected to database');
         server.listen(process.env.PORT || 4000)

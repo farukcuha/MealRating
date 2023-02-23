@@ -9,7 +9,7 @@ const getPastReviews = async (req, res) => executeProcessSafe(async () => {
     for (var i = 0; i < times.length; i++) {
         let time = times[i]
         var reviews = await Review.find({ time: time })
-        var averageScore = getAverageOfScores(reviews)
+        var averageScore = getAverageOfScores(reviews).toFixed(1)
         const distinctByMeal = [...new Set(reviews.map(dbm => dbm.meal))];
         var meals = []
         distinctByMeal.forEach(dbm => {
@@ -18,7 +18,7 @@ const getPastReviews = async (req, res) => executeProcessSafe(async () => {
             })
             meals.push({
                 meal: dbm,
-                averageScore: getAverageOfScores(reviewsByMeal),
+                averageScore: getAverageOfScores(reviewsByMeal).toFixed(1),
                 review_count: reviewsByMeal.length
             })
         })
