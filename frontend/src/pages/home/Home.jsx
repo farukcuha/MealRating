@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div className='root'>
             <div className="home_nav_container">
-                <h3>{process.env.REACT_APP_HOME_TITLE_PREFIX} Yemek Puanlama</h3>
+                <h3>{process.env.REACT_APP_HOME_TITLE}</h3>
                 <nav className='home_nav'>
                     <Link className='home_nav_item' to={'/statistic'}>İstatistik</Link>
                     <Link className='home_nav_item' to={'/past'}>Geçmiş</Link>

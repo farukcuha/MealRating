@@ -4,7 +4,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { TextField, Button, Box, Autocomplete, LinearProgress, ThemeProvider, createTheme, createFilterOptions } from '@mui/material';
+import { TextField, Button, Box, Autocomplete, LinearProgress, ThemeProvider, createTheme, createFilterOptions, CircularProgress, Grid } from '@mui/material';
 import { FormText, Input } from 'reactstrap';
 import { ReviewsContext } from '../contexts/ReviewsContext';
 import { insertReview } from '../controller/ReviewsContoller';
@@ -23,6 +23,10 @@ const AddReviewDialog = () => {
     const handleClickOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const [password, setPassword] = useState('')
+    const [isErrorPassword, setIsErrorPassword] = useState(false)
+    const [isEmptyPassword, setIsEmptyPassword] = useState(false)
+
     const [foodOption, setFoodOption] = useState(foods[0]);
     const [food, setFood] = useState('');
     const [isErrorMeal, setIsErrorMeal] = useState(false)
@@ -36,6 +40,8 @@ const AddReviewDialog = () => {
 
     const [body, setBody] = useState('')
     const [isErrorBody, setIsErrorBody] = useState(false)
+
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getFoods((data) => {
@@ -58,6 +64,8 @@ const AddReviewDialog = () => {
         setIsErrorMeal(food.length === 0);
         setIsErrorScore(score === null);
         setIsErrorBody(body.length === 0);
+        setIsErrorPassword(password !== process.env.REACT_APP_INSERT_PASSWORD)
+        setIsEmptyPassword(password.length === 0)
     }
 
     const clearInputs = () => {
@@ -68,11 +76,14 @@ const AddReviewDialog = () => {
         setImage(null)
         setBody('')
         setImageUploadProgress(null)
+        setPassword('')
+        setIsLoading(false)
     }
 
     const submitComment = () => {
         checkInputs()
-        if (food.length !== 0 && score !== null && body.length !== 0) {
+        if (food.length !== 0 && score !== null && body.length !== 0 && password === process.env.REACT_APP_INSERT_PASSWORD) {
+            setIsLoading(true)
             if (image != null) {
                 uploadImage(image, (downloadurl) => {
                     insertReviewInDialog(downloadurl)
@@ -116,8 +127,6 @@ const AddReviewDialog = () => {
         },
     });
 
-    const filter = createFilterOptions();
-
     return (
         <div style={{ marginTop: "16px" }}>
             <ThemeProvider theme={theme}>
@@ -130,12 +139,27 @@ const AddReviewDialog = () => {
                         {"Yorum Ekle"}
                     </DialogTitle>
                     <DialogContent>
-                        <Box>
+                        <Grid
+                            container
+                            spacing={0}
+                            direction="column"
+                            alignItems="center"
+                            justifyContent="center">
+                            <div style={{ "color": "red" }}>{(isErrorPassword && !isEmptyPassword) ? 'Hatalı Şifre' : ''}</div>
+                            <TextField
+                                id="outlined-multiline-static"
+                                label="Şifre"
+                                type="password"
+                                error={isEmptyPassword == true}
+                                value={password}
+                                onChange={e => {
+                                    e.preventDefault()
+                                    setPassword(e.target.value)
+                                }}
+                                fullWidth
+                                rows={3}
+                                sx={{ mt: 2 }} />
                             <Autocomplete
-                                selectOnFocus
-                                clearOnBlur
-                                handleHomeEndKeys
-                                freeSolo
                                 value={foodOption}
                                 onChange={(event, newValue) => {
                                     setFoodOption(newValue);
@@ -150,7 +174,7 @@ const AddReviewDialog = () => {
                                 options={foods}
                                 renderInput={(params) => <TextField error={isErrorMeal === true}
                                     {...params} label="Yemek" />}
-                                />
+                            />
 
                             <div style={{ "margin-top": "16px", "color": "red" }}>{isErrorScore === true ? 'Puan Seçiniz' : ''}</div>
                             <ToggleButtonGroup
@@ -163,10 +187,10 @@ const AddReviewDialog = () => {
                                 aria-label="Platform"
                                 fullWidth>
                                 <ToggleButton color='secondary' value='1'>1</ToggleButton>
-                                <ToggleButton value='2'>2</ToggleButton>
-                                <ToggleButton value='3'>3</ToggleButton>
-                                <ToggleButton value='4'>4</ToggleButton>
-                                <ToggleButton value='5'>5</ToggleButton>
+                                <ToggleButton color='secondary' value='2'>2</ToggleButton>
+                                <ToggleButton color='secondary' value='3'>3</ToggleButton>
+                                <ToggleButton color='secondary' value='4'>4</ToggleButton>
+                                <ToggleButton color='secondary' value='5'>5</ToggleButton>
                             </ToggleButtonGroup>
 
                             <ToggleButtonGroup
@@ -178,11 +202,11 @@ const AddReviewDialog = () => {
                                 }
                                 aria-label="Platform"
                                 fullWidth>
-                                <ToggleButton value='6'>6</ToggleButton>
-                                <ToggleButton value='7'>7</ToggleButton>
-                                <ToggleButton value='8'>8</ToggleButton>
-                                <ToggleButton value='9'>9</ToggleButton>
-                                <ToggleButton value='10'>10</ToggleButton>
+                                <ToggleButton color='secondary' value='6'>6</ToggleButton>
+                                <ToggleButton color='secondary' value='7'>7</ToggleButton>
+                                <ToggleButton color='secondary' value='8'>8</ToggleButton>
+                                <ToggleButton color='secondary' value='9'>9</ToggleButton>
+                                <ToggleButton color='secondary' value='10'>10</ToggleButton>
                             </ToggleButtonGroup>
 
                             <TextField
@@ -217,10 +241,12 @@ const AddReviewDialog = () => {
                                 rows={3}
                                 sx={{ mt: 2 }} />
 
-                            <Button fullWidth onClick={submitComment}
-                                variant="contained" sx={{ mt: 2 }}>Gönder</Button>
+                            {
+                                isLoading ? <CircularProgress style={{ "margin-top": "16px" }} /> : <Button fullWidth onClick={submitComment}
+                                    variant="contained" sx={{ mt: 2 }}>Gönder</Button>
+                            }
 
-                        </Box>
+                        </Grid>
                     </DialogContent>
                 </Dialog>
             </ThemeProvider>
