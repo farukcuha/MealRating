@@ -8,7 +8,7 @@ Meal rating is a web app to manage reviews for an organisation foods. Users can 
 - React<br>
 - NodeJS<br>
 
-Live Demo -> https://yemekdegerlendirme.web.app
+Live Demo -> https://yemekdegerlendirme.web.app (password:3338)
 
 ### Api
 **Install libraries**<br>
