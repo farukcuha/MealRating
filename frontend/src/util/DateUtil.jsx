@@ -21,6 +21,6 @@ export const getCurrentMeal = () => {
 
 export const initialDate = () => {
     let date = new Date()
-    date.setUTCHours(0, 0, 0, 0)
+    date.setHours(0, 0, 0, 0)
     return date
 }
